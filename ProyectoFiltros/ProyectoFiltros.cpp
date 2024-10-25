@@ -1,16 +1,21 @@
+//Used libraries
 #include <opencv2/imgcodecs.hpp>
 #include <opencv2/highgui.hpp>
 #include <opencv2/imgproc.hpp>
 #include <iostream>
 #include <windows.h>
 
+//Used headers
 #include "B&W_Filter.h"
 #include "ResizeImg.h"
 
+//Namespaces
 using namespace cv;
 using namespace std;
 
 int main() {
+
+	// Load the image
     Mat img = imread("C:/Users/jp570/Downloads/kanye-west-1707302156.7580967.jpg");
     if (img.empty()) {
         cerr << "Error: No se pudo cargar la imagen." << endl;
@@ -38,7 +43,6 @@ int main() {
      //        img.at<Vec3b>(Point(x, img.rows - 1 - y)) = up;
      //    }
      //}
-
 
     resizeToScreen(img);
     namedWindow("Imagen Ajustada", WINDOW_AUTOSIZE);
