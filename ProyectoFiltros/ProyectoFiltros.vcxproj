@@ -134,6 +134,9 @@
   <ItemGroup>
     <ClCompile Include="ProyectoFiltros.cpp" />
   </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="B&amp;W_Filter.h" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>

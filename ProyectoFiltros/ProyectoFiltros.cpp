@@ -3,6 +3,8 @@
 #include <opencv2/imgproc.hpp>
 #include <iostream>
 
+#include "B&W_Filter.h"
+
 using namespace cv;
 using namespace std;
 
@@ -13,16 +15,7 @@ int main() {
         return -1;
     }
 
-    // for (int y = 0; y < img.rows; y++) {
-    //     for (int x = 0; x < img.cols; x++) {
-    //         Vec3b color = img.at<Vec3b>(Point(x, y));
-    //         int graypixel = color[0] * 0.299 + color[1] * 0.587 + color[2] * 0.114;
-    //         color[0] = graypixel;
-    //         color[1] = graypixel;
-    //         color[2] = graypixel;
-    //         img.at<Vec3b>(Point(x, y)) = color;
-    //     }
-    // }
+	BnW_Filter(img);
 
     // for (int y = 0; y < img.rows; y++) {
     //     for (int x = 0; x < img.cols / 2; x++) {
