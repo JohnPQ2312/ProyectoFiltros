@@ -2,14 +2,16 @@
 #include <opencv2/highgui.hpp>
 #include <opencv2/imgproc.hpp>
 #include <iostream>
+#include <windows.h>
 
 #include "B&W_Filter.h"
+#include "ResizeImg.h"
 
 using namespace cv;
 using namespace std;
 
 int main() {
-    Mat img = imread("C:/Users/John/Downloads/IMG_2650.JPEG");
+    Mat img = imread("C:/Users/jp570/Downloads/kanye-west-1707302156.7580967.jpg");
     if (img.empty()) {
         cerr << "Error: No se pudo cargar la imagen." << endl;
         return -1;
@@ -38,11 +40,12 @@ int main() {
      //}
 
 
-    namedWindow("Modified Image", WINDOW_AUTOSIZE);
-    imshow("Modified Image", img);
-    cv::moveWindow("Modified Image", 0, 45);
-    cv::waitKey(0);
-    cv::destroyAllWindows();
+    resizeToScreen(img);
+    namedWindow("Imagen Ajustada", WINDOW_AUTOSIZE);
+    imshow("Imagen Ajustada", img);
+    moveWindow("Imagen Ajustada", 0, 45);
+    waitKey(0);
+    destroyAllWindows();
 
     return 0;
 }

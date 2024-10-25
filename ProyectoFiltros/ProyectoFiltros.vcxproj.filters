@@ -23,5 +23,8 @@
     <ClInclude Include="B&amp;W_Filter.h">
       <Filter>Archivos de origen</Filter>
     </ClInclude>
+    <ClInclude Include="ResizeImg.h">
+      <Filter>Archivos de origen</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
