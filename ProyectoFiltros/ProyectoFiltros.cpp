@@ -5,7 +5,7 @@
 #include <iostream>
 #include <windows.h>
 
-//Used headers
+//Functions in separated headers
 #include "B&W_Filter.h"
 #include "ResizeImg.h"
 
@@ -16,13 +16,13 @@ using namespace std;
 int main() {
 
 	// Load the image
-    Mat img = imread("C:/Users/jp570/Downloads/kanye-west-1707302156.7580967.jpg");
+    Mat img = imread("C:/Users/John/Downloads/IMG_2650.JPEG");
     if (img.empty()) {
         cerr << "Error: No se pudo cargar la imagen." << endl;
-        return -1;
+		return -1; //Used for indicating an error
     }
 
-	BnW_Filter(img);
+	//BnW_Filter(img);
 
     // for (int y = 0; y < img.rows; y++) {
     //     for (int x = 0; x < img.cols / 2; x++) {
@@ -44,8 +44,15 @@ int main() {
      //    }
      //}
 
-    resizeToScreen(img);
-    namedWindow("Imagen Ajustada", WINDOW_AUTOSIZE);
+	//Mat rotated(img.cols, img.rows, img.type()); //Creates a copy of the image with the dimensions inverted
+ //    for (int y = 0; y < img.rows; y++) {
+ //        for (int x = 0; x < img.cols; x++) {
+	//		 rotated.at<Vec3b>(x, img.rows - 1 - y) = img.at<Vec3b>(y, x);
+ //        }
+ //    }
+
+    resize(img);
+    namedWindow("Imagen Ajustada", WINDOW_NORMAL);
     imshow("Imagen Ajustada", img);
     moveWindow("Imagen Ajustada", 0, 45);
     waitKey(0);

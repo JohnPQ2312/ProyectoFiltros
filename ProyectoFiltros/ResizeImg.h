@@ -9,7 +9,7 @@
 using namespace cv;
 using namespace std;
 
-void resizeToScreen(Mat& img) {
+void resize(Mat& img) {
     int screenWidth = GetSystemMetrics(SM_CXSCREEN);
     int screenHeight = GetSystemMetrics(SM_CYSCREEN);
 
