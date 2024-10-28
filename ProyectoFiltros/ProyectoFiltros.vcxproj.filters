@@ -26,5 +26,11 @@
     <ClInclude Include="ResizeImg.h">
       <Filter>Archivos de origen</Filter>
     </ClInclude>
+    <ClInclude Include="InvertedXY.h">
+      <Filter>Archivos de origen</Filter>
+    </ClInclude>
+    <ClInclude Include="Rotate.h">
+      <Filter>Archivos de origen</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

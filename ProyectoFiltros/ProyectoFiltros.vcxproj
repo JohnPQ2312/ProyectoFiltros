@@ -136,7 +136,9 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="B&amp;W_Filter.h" />
+    <ClInclude Include="InvertedXY.h" />
     <ClInclude Include="ResizeImg.h" />
+    <ClInclude Include="Rotate.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
