@@ -32,5 +32,8 @@
     <ClInclude Include="Rotate.h">
       <Filter>Archivos de origen</Filter>
     </ClInclude>
+    <ClInclude Include="NegativeFilter.h">
+      <Filter>Archivos de origen</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

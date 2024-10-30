@@ -137,6 +137,7 @@
   <ItemGroup>
     <ClInclude Include="B&amp;W_Filter.h" />
     <ClInclude Include="InvertedXY.h" />
+    <ClInclude Include="NegativeFilter.h" />
     <ClInclude Include="ResizeImg.h" />
     <ClInclude Include="Rotate.h" />
   </ItemGroup>
