@@ -11,6 +11,7 @@
 #include "InvertedXY.h"
 #include "Rotate.h"
 #include "NegativeFilter.h"
+#include "ShowImage.h"
 
 //Namespaces
 using namespace cv;
@@ -19,84 +20,65 @@ using namespace std;
 int main() {
     bool option = true;
     char key;
+    string name = "Original";
 
-    // Load the image
-    Mat img = imread("C:/Users/jp570/Downloads/kanye-west-1707302156.7580967.jpg");
+    //Load the image
+    Mat img = imread("C:/Users/John/Downloads/kanye-west-1707302156.7580967.jpg");
     if (img.empty()) {
         cerr << "Error: No se pudo cargar la imagen." << endl;
         return -1; //Used for indicating an error
     }
 
-	// Show the original image
-    resize(img);
-    namedWindow("Original", WINDOW_NORMAL);
-    imshow("Original", img);
-    moveWindow("Original", 0, 45);
-
+	//Show the original image
+    ShowImage(img, name);
 
     while (option == true) {
-        Mat modifiedclone(img.rows, img. cols, img.type()); //Creates a copy of the image
-        Mat invertedclone(img.cols, img.rows, img.type()); //Creates a copy of the image with the dimensions inverted
-		key = waitKey(0); //Waits for a key to be pressed
+        Mat modifiedclone(img.rows, img. cols, img.type()); //Copy for modifications
+        Mat invertedclone(img.cols, img.rows, img.type()); //Copy with inverted dimensions
+		key = waitKey(0);
+		char pressedK = static_cast<char>(key); //Converts the key to a char
+		char uppercaseK = toupper(pressedK); //Converts the char to uppercase
 
-        switch (key) {
+        switch (uppercaseK) {
             case 'O':
-                case 'o':
-                    destroyAllWindows();
-                    resize(img);
-                    namedWindow("Original", WINDOW_NORMAL);
-                    imshow("Original", img);
-                    moveWindow("Original", 0, 45);
-                    break;
+				name = "Original";
+                destroyAllWindows();
+                ShowImage(img, name);
+                break;
             case 'A':
-                case 'a':
-                    destroyAllWindows();
-                    BnW_Filter(img, modifiedclone);
-                    resize(modifiedclone);
-                    namedWindow("Blanco y Negro", WINDOW_NORMAL);
-                    imshow("Blanco y Negro", modifiedclone);
-                    moveWindow("Blanco y Negro", 0, 45);
-                    break;
+                destroyAllWindows();
+                name = "Blanco y negro";
+                BnW_Filter(img, modifiedclone);
+                ShowImage(modifiedclone, name);
+                break;
             case 'B':
-                case 'b':
-                    destroyAllWindows();
-                    InvertedX(img, modifiedclone);
-                    resize(modifiedclone);
-                    namedWindow("Inversión Horizontal", WINDOW_NORMAL);
-                    imshow("Inversión Horizontal", modifiedclone);
-                    moveWindow("Inversión Horizontal", 0, 45);
-                    break;
+                name = "Invertido horizontal";
+                destroyAllWindows();
+                InvertedX(img, modifiedclone);
+                ShowImage(modifiedclone, name);
+                break;
             case 'C':
-                case 'c':
-                    destroyAllWindows();
-                    InvertedY(img, modifiedclone);
-                    resize(modifiedclone);
-                    namedWindow("Inversión Vertical", WINDOW_NORMAL);
-                    imshow("Inversión Vertical", modifiedclone);
-                    moveWindow("Inversión Vertical", 0, 45);
-                    break;
+                name = "Invertido vertical";
+                destroyAllWindows();
+                InvertedY(img, modifiedclone);
+                ShowImage(modifiedclone, name);
+                break;
             case 'D':
-                case 'd':
-                    destroyAllWindows();
-                    Rotate(img, invertedclone);
-                    resize(invertedclone);
-                    namedWindow("Rotación 90", WINDOW_NORMAL);
-                    imshow("Rotación 90", invertedclone);
-                    moveWindow("Rotación 90", 0, 45);
-                    break;
+                name = "90 grados";
+                destroyAllWindows();
+                Rotate(img, invertedclone);
+                ShowImage(invertedclone, name);
+                break;
             case 'E':
-                case 'e':
-                    destroyAllWindows();
-                    Negative(img, modifiedclone);
-                    resize(modifiedclone);
-                    namedWindow("Negativo", WINDOW_NORMAL);
-                    imshow("Negativo", modifiedclone);
-                    moveWindow("Negativo", 0, 45);
-                    break;
+                name = "Negativo";
+                destroyAllWindows();
+                Negative(img, modifiedclone);
+                ShowImage(modifiedclone, name);
+                break;
             case 27:
                 destroyAllWindows();
-				option = false;
-				break;
+                option = false;
+                break;
         }
     }
 }

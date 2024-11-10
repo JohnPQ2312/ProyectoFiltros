@@ -140,6 +140,7 @@
     <ClInclude Include="NegativeFilter.h" />
     <ClInclude Include="ResizeImg.h" />
     <ClInclude Include="Rotate.h" />
+    <ClInclude Include="ShowImage.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
