@@ -14,7 +14,7 @@ void InvertedX(Mat img, Mat horizontal) {
 
             int invertedX = img.cols - 1 - x;
 
-            horizontal.at<Vec3b>(Point(invertedX, y)) = img.at<Vec3b>(y, x);
+            horizontal.at<Vec3b>(Point(invertedX, y)) = img.at<Vec3b>(Point(x, y));
         }
     }
 }
@@ -25,7 +25,7 @@ void InvertedY(Mat img, Mat vertical) {
 
             int invertedY = img.rows - 1 - y;
 
-            vertical.at<Vec3b>(Point(x, invertedY)) = img.at<Vec3b>(y, x);
+            vertical.at<Vec3b>(Point(x, invertedY)) = img.at<Vec3b>(Point(x, y));
         }
     }
 }
