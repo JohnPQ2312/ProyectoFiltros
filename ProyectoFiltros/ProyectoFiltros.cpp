@@ -1,11 +1,11 @@
-//Used libraries
+//Bibliotecas usadas
 #include <opencv2/imgcodecs.hpp>
 #include <opencv2/highgui.hpp>
 #include <opencv2/imgproc.hpp>
 #include <iostream>
 #include <windows.h>
 
-//Functions in separated headers
+//Funciones en distintos .h
 #include "B&W_Filter.h"
 #include "ResizeImg.h"
 #include "InvertedXY.h"
@@ -20,24 +20,24 @@ using namespace std;
 int main() {
     bool option = true;
     char key;
-    string name = "Original";
+    string name = "Original"; 
 
-    //Load the image
+    //Ruta y carga de imagen
     Mat img = imread("C:/Users/John/Downloads/kanye-west-1707302156.7580967.jpg");
     if (img.empty()) {
         cerr << "Error: No se pudo cargar la imagen." << endl;
-        return -1; //Used for indicating an error
+        return -1;
     }
 
-	//Show the original image
+	//Muestra la imagen original en pantalla
     ShowImage(img, name);
 
     while (option == true) {
-        Mat modifiedclone(img.rows, img. cols, img.type()); //Copy for modifications
-        Mat invertedclone(img.cols, img.rows, img.type()); //Copy with inverted dimensions
+        Mat modifiedclone(img.rows, img. cols, img.type()); //Clon para modificaciones
+        Mat invertedclone(img.cols, img.rows, img.type()); //Clon de dimensiones invertidas
 		key = waitKey(0);
-		char pressedK = static_cast<char>(key); //Converts the key to a char
-		char uppercaseK = toupper(pressedK); //Converts the char to uppercase
+		char pressedK = static_cast<char>(key); //Convierte la tecla en char
+		char uppercaseK = toupper(pressedK); //Convierte el char en mayúscula
 
         switch (uppercaseK) {
             case 'O':

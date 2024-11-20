@@ -8,7 +8,7 @@
 using namespace cv;
 using namespace std;
 
-void ShowImage(Mat img, string name) {
+void ShowImage(Mat img, string name) { //Función para mostrar imagen
 	resize(img);
     namedWindow(name, WINDOW_NORMAL);
     imshow(name, img);

@@ -8,7 +8,7 @@
 using namespace cv;
 using namespace std;
 
-void InvertedX(Mat img, Mat horizontal) {
+void InvertedX(Mat img, Mat horizontal) { //Inversión en eje X
     for (int y = 0; y < img.rows; y++) {
         for (int x = 0; x < img.cols; x++) {
 
@@ -19,11 +19,11 @@ void InvertedX(Mat img, Mat horizontal) {
     }
 }
 
-void InvertedY(Mat img, Mat vertical) {
+void InvertedY(Mat img, Mat vertical) { //Inversión en eje Y
     for (int y = 0; y < img.rows; y++) {
         for (int x = 0; x < img.cols; x++) {
 
-            int invertedY = img.rows - 1 - y;
+			int invertedY = img.rows - 1 - y;
 
             vertical.at<Vec3b>(Point(x, invertedY)) = img.at<Vec3b>(Point(x, y));
         }

@@ -9,7 +9,7 @@
 using namespace cv;
 using namespace std;
 
-void resize(Mat& img) {
+void resize(Mat& img) { //Función para redimensionar imagen a las dimensiones de la pantalla del dispositivo
     int screenWidth = GetSystemMetrics(SM_CXSCREEN);
     int screenHeight = GetSystemMetrics(SM_CYSCREEN);
 
